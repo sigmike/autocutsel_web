@@ -3,20 +3,44 @@
 <body>
 <center><h2>autocutsel</h2></center>
 
-autocutsel synchronizes the two copy/paste buffers mainly used by X
-applications. It automates the use of xcutsel(1).<br>
-It scans each buffer regularly and synchonizes them.<br>
-<br>
-I wrote this tool to have a unified copy/paste buffer between Windows and a VNC viewer displaying an X desktop.<br>
+<p>X servers use two schemes to copy text between applications. The first one
+(old and deprecated) is the cutbuffer. It is a simple buffer in which any
+application can store text. The other scheme is the selection and works
+differently. There may be many selections in a single server. An
+application does not copy data in a selection, it "owns" it. When
+another application wants to retreive the content of a selection, it
+asks the owner.</p>
+
+<p>Recent desktop applications (GNOME, KDE, ...) use two selections: the
+PRIMARY and the CLIPBOARD. The PRIMARY selection is used when you select
+some text with the mouse. You usually paste it using the middle button. The
+CLIPBOARD selection is used when you copy text by using, for example,
+the Edit/Copy menu. You may paste it using the Edit/Paste menu.</p>
+
+<p>Windows VNC clients keep the Windows clipboard synchronized with the
+cutbuffer, but not with the selections. And since recent applications
+don't use the cutbuffer, the server's CLIPBOARD is never synchronized
+with Windows' one.</p>
+
+<p>Autocutsel tracks changes in the server's cutbuffer and CLIPBOARD
+selection. When the CLIPBOARD is changed, it updates the cutbuffer. When
+the cutbuffer is changed, it owns the CLIPBOARD selection. The cutbuffer
+and CLIPBOARD selection are always synchronized. Since the VNC client
+synchronizes the Windows' clipboard and the server's cutbuffer, all
+three "clipboards" are always kept synchronized. When you copy some text in
+Windows, the cutbuffer and the CLIPBOARD selection are updated. When you
+copy text on the server using either the cutbuffer or the CLIPBOARD
+selection, the Windows's clipboard is always updated.</p>
 <br>
 License: <a href="COPYING.txt"><b>GNU GPL</b></a>.<br>
 <br>
-<b>Download</b>: <a href="http://savannah.nongnu.org/download/autocutsel/autocutsel-0.7.0.tar.gz"><b>autocutsel-0.7.0.tar.gz</b></a><br>
+<b>Download</b>: <a href="http://savannah.nongnu.org/download/autocutsel/autocutsel-0.7.1.tar.gz"><b>autocutsel-0.7.1.tar.gz</b></a><br>
 <a href="http://savannah.nongnu.org/projects/autocutsel/">Savannah project</a><br>
 <br>
 <br>
 <b>News</b>:<br>
 <ul>
+  <li>2004-12-12: Version 0.7.1 released</li>
   <li>2004-09-11: Version 0.7.0 released</li>
   <li>2002-06-03: Version 0.6.2 released</li>
   <li>2002-06-02: Version 0.6.1 released</li>
