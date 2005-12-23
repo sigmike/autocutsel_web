@@ -31,15 +31,36 @@ three "clipboards" are always kept synchronized. When you copy some text in
 Windows, the cutbuffer and the CLIPBOARD selection are updated. When you
 copy text on the server using either the cutbuffer or the CLIPBOARD
 selection, the Windows's clipboard is always updated.</p>
+<p>To build autocutsel:
+<code><pre>
+./configure
+make
+</pre></code>
+</p>
+<p>If you downloaded autocutsel from CVS, you first have to run <code>./autogen.sh</code> to build the configure script.</p>
+<p>If configure fails because it can't find X or Xaw libraries, you may have to
+install the devel packages of these libraries.</p>
+
+<p>To install it (as root):
+<code><pre>make install</pre></code>
+</p>
+<p>To run it:
+<code><pre>autocutsel</pre></code>
+</p>
+<p>
+By default, autocutsel synchronizes the CLIPBOARD selection. You may want to use the PRIMARY selection instead, if your applications use Motif or another toolkit not using the CLIPBOARD. To do that, simply run
+<code><pre>autocutsel -selection PRIMARY</pre></code>
+</p>
+
+
+<b>Download</b>: <a href="http://savannah.nongnu.org/download/autocutsel/autocutsel-0.8.1.tar.gz"><b>autocutsel-0.8.1.tar.gz</b></a><br>
+<a href="http://savannah.nongnu.org/projects/autocutsel/">Savannah project</a><br>
 <br>
 License: <a href="COPYING.txt"><b>GNU GPL</b></a>.<br>
 <br>
-<b>Download</b>: <a href="http://savannah.nongnu.org/download/autocutsel/autocutsel-0.8.0.tar.gz"><b>autocutsel-0.8.0.tar.gz</b></a><br>
-<a href="http://savannah.nongnu.org/projects/autocutsel/">Savannah project</a><br>
-<br>
-<br>
 <b>News</b>:<br>
 <ul>
+  <li>2005-12-23: Version 0.8.1 released</li>
   <li>2004-12-23: Version 0.8.0 released</li>
   <li>2004-12-12: Version 0.7.1 released</li>
   <li>2004-09-11: Version 0.7.0 released</li>
