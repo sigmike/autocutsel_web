@@ -31,35 +31,28 @@ three "clipboards" are always kept synchronized. When you copy some text in
 Windows, the cutbuffer and the CLIPBOARD selection are updated. When you
 copy text on the server using either the cutbuffer or the CLIPBOARD
 selection, the Windows's clipboard is always updated.</p>
-<p>To build autocutsel:
-<code><pre>
-./configure
-make
-</pre></code>
-</p>
-<p>If you downloaded autocutsel from CVS, you first have to run <code>./autogen.sh</code> to build the configure script.</p>
-<p>If configure fails because it can't find X or Xaw libraries, you may have to
-install the devel packages of these libraries.</p>
 
-<p>To install it (as root):
-<code><pre>make install</pre></code>
-</p>
-<p>To run it:
-<code><pre>autocutsel</pre></code>
-</p>
-<p>
-By default, autocutsel synchronizes the CLIPBOARD selection. You may want to use the PRIMARY selection instead, if your applications use Motif or another toolkit not using the CLIPBOARD. To do that, simply run
-<code><pre>autocutsel -selection PRIMARY</pre></code>
-</p>
+<p>You can also use autocutsel to track the PRIMARY selection to copy text when it's selected. To do this, simply run autocutsel with the arguments "<code>-s PRIMARY</code>"</p>
 
+<p>Some softwares (like Open Office Writer) have trouble when the PRIMARY selection
+is requested before the mouse button is released. As a workaround, you can run
+autocutsel with the "<code>-buttonup</code>" option and it will only get the selection when
+the first mouse button is not pressed.</p>
 
-<b>Download</b>: <a href="http://savannah.nongnu.org/download/autocutsel/autocutsel-0.8.1.tar.gz"><b>autocutsel-0.8.1.tar.gz</b></a><br>
-<a href="http://savannah.nongnu.org/projects/autocutsel/">Savannah project</a><br>
-<br>
-License: <a href="COPYING.txt"><b>GNU GPL</b></a>.<br>
-<br>
-<b>News</b>:<br>
+<h3>Download</h3>
+This software is releases under the <a href="COPYING.txt">GNU GPL</a>.
 <ul>
+<li><a href="http://savannah.nongnu.org/download/autocutsel/autocutsel-0.9.0.tar.gz"><b>autocutsel-0.9.0.tar.gz</b></a></li>
+<li><a href="README.txt">README</a>
+<li><a href="ChangeLog.txt">ChangeLog</a></li>
+<li><a href="https://savannah.nongnu.org/cvs/?group=autocutsel">CVS</a></li>
+<li><a href="http://savannah.nongnu.org/projects/autocutsel/">Savannah project</a></li>
+<li><a href="http://savannah.nongnu.org/download/autocutsel/">Older versions</a>
+</ul>
+
+<h3>News</h3>
+<ul>
+  <li>2006-11-05: Version 0.9.0 released</li>
   <li>2005-12-23: Version 0.8.1 released</li>
   <li>2004-12-23: Version 0.8.0 released</li>
   <li>2004-12-12: Version 0.7.1 released</li>
@@ -70,12 +63,9 @@ License: <a href="COPYING.txt"><b>GNU GPL</b></a>.<br>
   <li>2002-05-26: Version 0.5 released</li>
   <li>2002-05-19: Version 0.4 released</li>
 </ul>
-<a href="ChangeLog.txt">ChangeLog</a><br>
-<br>
-Any feedback is welcome.<br>
-<br>
-Michael Witrant<br>
-mike at lepton.fr<br>
-<br>
+
+<h3>Contact</h3>
+<p>Any feedback is welcome.</p>
+<p>Michael Witrant ( mike at lepton.fr )</p>
 </body>
 </html>
