@@ -10,7 +10,7 @@ margin:0.2em 0 1.2em 0
 }
 
 h1 {
-padding:0; margin:1em;
+padding:0; margin:30px 1em 0 1em;
 font-size: 24px; font-style:italic; 
 color: #f0c030;
 font-family: Verdana, Helvetica, Arial, sans-serif;
@@ -48,7 +48,9 @@ background-position: left bottom;}
 text-align:left;
 background-image: url(h_osw3.jpg); background-position: top right;
 height: 142px;
-background-repeat: no-repeat;}
+background-repeat: no-repeat;
+overflow:auto;
+}
 
 .titleblock p {
 color: #8ba249;
@@ -68,23 +70,25 @@ border-bottom: 1px #e7e7e7 solid;}
 ul.navbar li {
 display:inline;}
 
+a.nav {
+display:block; float:left; margin:0.1em 1em 0.1em 1em; 
+text-decoration:none;
+font-size: 0.9em;
+}
 a.nav:link, a.nav:visited {
-display:block; float:left; width: 150px; margin:0; 
-text-decoration:none; background-color: #fafafa ;color: #000000;
+background-color: #fafafa;
+color: #000000;
 font-weight: bold;
-font-size: 0.9em;}
+}
 
 a.nav:hover {
-display:block; float:left; width: 150px; margin:0; 
-text-decoration:none;
 color:#ffffff;
 background-color: #78b73e;
 font-weight: bold;
 }
 
 a.nav:active {
-display:block; float:left; width: 150px; margin:0; 
-text-decoration:none; background-color:#999999; color:#FFFFFF;}
+background-color:#999999; color:#FFFFFF;}
 
 
 
