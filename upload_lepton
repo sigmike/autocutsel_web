@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mv index.html index.html.old
+sed 's!http://savannah.nongnu.org/download/autocutsel/!!' <index.html.old >index.html
+
+lftp -c "
+  open ftp://lepton@ftp.lepton.fr/lepton.fr/docs/tools/autocutsel/ 
+  mirror -R .
+"
+
+mv index.html.old index.html
